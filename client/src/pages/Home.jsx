@@ -14,9 +14,9 @@ export default function Home() {
   <div className="text-white text-2xl font-bold hover:text-[#5b4fc8]">TravelEase</div>
   <nav className="flex space-x-6 font-semibold">
     <a href="#" className="text-[#0b4b75] hover:text-[#f9b576] transition">Home</a>
-    <a href="#" className="text-[#0b4b75] hover:text-[#f9b576] transition">About Us</a>
-    <a href="#" className="text-[#0b4b75] hover:text-[#f9b576] transition">Sign In</a>
-    <a href="#" className="text-[#0b4b75] hover:text-[#f9b576] transition">Sign Up</a>
+    <a href="/about" className="text-[#0b4b75] hover:text-[#f9b576] transition">About</a>
+    <a href="/login" className="text-[#0b4b75] hover:text-[#f9b576] transition">Login</a>
+    <a href="/signup" className="text-[#0b4b75] hover:text-[#f9b576] transition">Sign Up</a>
     <a href="/contact" className="text-[#0b4b75] hover:text-[#f9b576] transition">Contact</a>
     {/* <a href="#" className="bg-[#d0e1ff] text-[#344e9e] px-4 py-2 rounded hover:bg-[#c8d9ff] transition">Explore</a> */}
   </nav>

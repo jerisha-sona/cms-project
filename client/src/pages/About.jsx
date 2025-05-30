@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 export default function About() {
     return (
@@ -11,6 +11,9 @@ export default function About() {
                     <div className="text-2xl font-bold text-white drop-shadow">Tourism</div>
                     <nav className="flex space-x-6">
                         <Link to="/" className="text-white hover:text-purple-200 font-medium drop-shadow">Home</Link>
+                        <Link to="/" className="text-white hover:text-purple-200 font-medium drop-shadow">About</Link>
+                        <Link to="/login" className="text-white hover:text-purple-200 font-medium drop-shadow">Login</Link>
+                        <Link to="/signup" className="text-white hover:text-purple-200 font-medium drop-shadow">SignUp</Link>
                         <Link to="/contact" className="text-white hover:text-purple-200 font-medium drop-shadow">Contact</Link>
                     </nav>
                 </div>

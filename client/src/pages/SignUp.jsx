@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 
-export default function Signup() {
+export default function SignUp() {
     const handleSubmit = (e) => {
         e.preventDefault();
         Swal.fire("Welcome aboard!");
@@ -29,6 +29,8 @@ export default function Signup() {
                 <nav className="flex space-x-6">
                     <Link to="/" className="text-black font-semibold hover:text-purple-300 transition">Home</Link>
                     <Link to="/about" className="text-black font-semibold hover:text-purple-300 transition">About</Link>
+                    <Link to="/login" className="text-black font-semibold hover:text-purple-300 transition">Login</Link>
+                    <Link to="/" className="text-black font-semibold hover:text-purple-300 transition">SignUp</Link>
                     <Link to="/contact" className="text-black font-semibold hover:text-purple-300 transition">Contact</Link>
                 </nav>
             </header>
