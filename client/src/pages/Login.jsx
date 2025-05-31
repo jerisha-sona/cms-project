@@ -28,10 +28,9 @@ export default function Login() {
                     <span className="text-2xl font-bold text-black">Tourism</span>
                 </div>
                 <nav className="flex space-x-6">
-                    <Link to="/home" className="text-black font-semibold hover:text-purple-300 transition">Home</Link>
-                    <Link to="/about" className="text-black font-semibold hover:text-purple-300 transition">About</Link>
-                    <Link to="/" className="text-black font-semibold hover:text-purple-300 transition">Login</Link>
+                    <Link to="/" className="text-black font-semibold hover:text-purple-300 transition">Home</Link>                    <Link to="/" className="text-black font-semibold hover:text-purple-300 transition">Login</Link>
                     <Link to="/signup" className="text-black font-semibold hover:text-purple-300 transition">SignUp</Link>
+                    <Link to="/about" className="text-black font-semibold hover:text-purple-300 transition">About</Link>                    
                     <Link to="/contact" className="text-black font-semibold hover:text-purple-300 transition">Contact</Link>
                 </nav>
             </header>
