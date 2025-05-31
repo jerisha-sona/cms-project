@@ -3,6 +3,9 @@ import { Link, Outlet, useLocation } from 'react-router-dom';
 
 const DOG_PATHS = [
   { path: '/Intro', text: '📝 Introduction' },
+  { path: '/Portfolio', text: '📝 Profile' },
+  { path: '/Travelform', text: '📝 form' },
+
   
 ];
 
