@@ -24,7 +24,7 @@ export default function Contact() {
     >
       <div className="bg-white bg-opacity-30 backdrop-blur-md rounded-xl shadow-lg max-w-md w-full p-8">
         <Link
-          to="/"
+          to="/home"
           className="inline-block mb-6 text-[#5b4fc8] font-semibold hover:text-[#a076f9] transition"
         >
           &larr; Back to Home

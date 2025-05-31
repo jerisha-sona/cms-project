@@ -2,13 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 export default function SignUp() {
+    const navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        Swal.fire("Welcome aboard!");
+        Swal.fire("Welcome aboard!").then(() => {
+            navigate('/Intro');
+        });
     };
-
     return (
         <div
             className="relative min-h-screen bg-gradient-to-b from-indigo-400 via-purple-500 to-blue-600"
@@ -18,24 +22,24 @@ export default function SignUp() {
                 backgroundPosition: 'center',
             }}
         >
-            {/* Header */}
-            <header className="absolute top-0 left-0 w-full flex justify-between items-center px-8 py-4 bg-transparent">
-                <div className="flex items-center space-x-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.18 9l-6.39 2.13a1 1 0 00-.02 1.9l6.41 2.13V21a1 1 0 001.64.77l2.36-2.13 4.24 1.41a1 1 0 001.28-1.28l-1.41-4.24 2.13-2.36A1 1 0 0021 13.18V11a1 1 0 00-.77-1.64l-2.13-2.36-4.24-1.41a1 1 0 00-1.28 1.28l1.41 4.24-2.36 2.13A1 1 0 0010.18 9z" />
-                    </svg>
-                    <span className="text-2xl font-bold text-black">Tourism</span>
-                </div>
-                <nav className="flex space-x-6">
-                    <Link to="/" className="text-black font-semibold hover:text-purple-300 transition">Home</Link>
-                    <Link to="/about" className="text-black font-semibold hover:text-purple-300 transition">About</Link>
-                    <Link to="/login" className="text-black font-semibold hover:text-purple-300 transition">Login</Link>
-                    <Link to="/" className="text-black font-semibold hover:text-purple-300 transition">SignUp</Link>
-                    <Link to="/contact" className="text-black font-semibold hover:text-purple-300 transition">Contact</Link>
-                </nav>
-            </header>
+            /* Header */
+                        <header className="absolute top-0 left-0 w-full flex justify-between items-center px-8 py-4 bg-transparent">
+                            <div className="flex items-center space-x-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.18 9l-6.39 2.13a1 1 0 00-.02 1.9l6.41 2.13V21a1 1 0 001.64.77l2.36-2.13 4.24 1.41a1 1 0 001.28-1.28l-1.41-4.24 2.13-2.36A1 1 0 0021 13.18V11a1 1 0 00-.77-1.64l-2.13-2.36-4.24-1.41a1 1 0 00-1.28 1.28l1.41 4.24-2.36 2.13A1 1 0 0010.18 9z" />
+                                </svg>
+                                <span className="text-2xl font-bold text-black">Tourism</span>
+                            </div>
+                            <nav className="flex space-x-6">
+                                <Link to="/home" className="text-black font-semibold hover:text-purple-300 transition">Home</Link>
+                                <Link to="/about" className="text-black font-semibold hover:text-purple-300 transition">About</Link>
+                                <Link to="/login" className="text-black font-semibold hover:text-purple-300 transition">Login</Link>
+                                <Link to="/sign-up" className="text-black font-semibold hover:text-purple-300 transition">SignUp</Link>
+                                <Link to="/contact" className="text-black font-semibold hover:text-purple-300 transition">Contact</Link>
+                            </nav>
+                        </header>
 
-            {/* Main content */}
+                        {/* Main content */}
             <div className="flex flex-col items-center justify-center min-h-screen px-4">
                 <div className="relative z-10 w-full max-w-md bg-white/10 backdrop-blur-md rounded-xl p-8 shadow-lg mt-16">
                     <div className="flex flex-col items-center mb-6">
