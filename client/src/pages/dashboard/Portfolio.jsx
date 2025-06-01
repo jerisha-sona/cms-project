@@ -53,7 +53,7 @@ const placesData = {
   Dubai: {
     title: "Dubai, UAE",
     info: "Known for luxury shopping, ultramodern architecture, and the tallest building, Burj Khalifa.",
-    img: "https://images.pexels.com/photos/3584859/pexels-photo-3584859.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    img: "https://images.pexels.com/photos/162031/dubai-tower-arab-khalifa-162031.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     funFact: "Dubai’s indoor ski resort is open year-round in the desert.",
   },
   Bali: {

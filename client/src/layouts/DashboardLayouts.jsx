@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 
-const DOG_PATHS = [
-  { path: '/Intro', text: '📝 Introduction' },
-  { path: '/Portfolio', text: '📝 Profile' },
-  { path: '/Travelform', text: '📝 form' },
 
-  
+
+const DOG_PATHS = [
+  { path: '/dashboard/intro', text: '📝 Introduction' },
+  { path: '/dashboard/portfolio', text: '📝 Profile' },
+  { path: '/dashboard/travelform', text: '📝 Form' },
 ];
 
 export default function DashboardLayout() {
@@ -14,7 +14,7 @@ export default function DashboardLayout() {
 
   return (
     <div className="flex min-h-screen bg-gray-100">
-      <aside className="p-8 w-64 sticky top-0 h-screen bg-gradient-to-b from-sky-900 to-wheat-800 flex flex-col items-center shadow-2xl">
+      <aside className="p-8 w-64 sticky top-0 h-screen bg-gradient-to-b from-sky-900 to-yellow-800 flex flex-col items-center shadow-2xl">
         <span className="text-3xl font-extrabold mb-8 text-white tracking-wide">
           Dashboard
         </span>
@@ -35,6 +35,7 @@ export default function DashboardLayout() {
           ))}
         </nav>
       </aside>
+      
       <main className="flex-1 min-h-screen overflow-auto p-10">
         <Outlet />
       </main>

@@ -1,14 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 export default function Login() {
-    const handleSubmit = (e) => {
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        Swal.fire("Let's fly").then(() => {
-            window.location.href = "/intro";
-        });
+        await Swal.fire("Let's fly");
+        navigate("/dashboard/intro"); // Make sure this route exists in your router
     };
 
     return (
@@ -27,11 +28,10 @@ export default function Login() {
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.18 9l-6.39 2.13a1 1 0 00-.02 1.9l6.41 2.13V21a1 1 0 001.64.77l2.36-2.13 4.24 1.41a1 1 0 001.28-1.28l-1.41-4.24 2.13-2.36A1 1 0 0021 13.18V11a1 1 0 00-.77-1.64l-2.13-2.36-4.24-1.41a1 1 0 00-1.28 1.28l1.41 4.24-2.36 2.13A1 1 0 0010.18 9z" />
                     </svg>
-                    <span className="text-2xl font-bold text-black">Tourism</span>
+                    <span className="text-2xl font-bold text-white">TravelEase</span>
                 </div>
                 <nav className="flex space-x-6">
                     <Link to="/home" className="text-black font-semibold hover:text-purple-300 transition">Home</Link>
-                    
                     <Link to="/home" className="text-black font-semibold hover:text-purple-300 transition">Login</Link>
                     <Link to="/sign-up" className="text-black font-semibold hover:text-purple-300 transition">SignUp</Link>
                     <Link to="/about" className="text-black font-semibold hover:text-purple-300 transition">About</Link>
@@ -84,7 +84,7 @@ export default function Login() {
 
                     <div className="text-center text-black mt-6">
                         <p>Not a member yet?</p>
-                        <Link to="/signup">
+                        <Link to="/sign-up">
                             <button className="mt-2 px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-full transition">
                                 Sign up
                             </button>

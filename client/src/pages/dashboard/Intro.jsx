@@ -115,7 +115,7 @@ export default function TravelIntroDetailed() {
                     Home
                 </button>
                 <button
-                    onClick={() => navigate("/payment")}
+                    onClick={() => navigate("/dashboard/travelform")}
                     className="text-blue-700 hover:text-purple-600 font-medium transition-colors focus:outline-none"
                 >
                     Packages

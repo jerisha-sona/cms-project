@@ -31,7 +31,7 @@ export default function Home() {
         <nav className="flex space-x-6">
           <a href="/home" className="text-white font-semibold hover:text-[#f9b576] transition">Home</a>
           <a href="/login" className="text-white font-semibold hover:text-[#f9b576] transition">Login</a>
-          <a href="/signup" className="text-white font-semibold hover:text-[#f9b576] transition">Sign Up</a>
+          <a href="/sign-up" className="text-white font-semibold hover:text-[#f9b576] transition">Sign Up</a>
           <a href="/about" className="text-white font-semibold hover:text-[#f9b576] transition">About</a>          
           <a href="/contact" className="text-white font-semibold hover:text-[#f9b576] transition">Contact</a>
         </nav>

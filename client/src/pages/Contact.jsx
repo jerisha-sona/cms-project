@@ -41,7 +41,7 @@ export default function Contact() {
                 <nav className="flex space-x-6">
                     <Link to="/home" className="text-white font-semibold hover:text-purple-300 transition">Home</Link>
                     <Link to="/login" className="text-white font-semibold hover:text-purple-300 transition">Login</Link>
-                    <Link to="/signup" className="text-white font-semibold hover:text-purple-300 transition">SignUp</Link>
+                    <Link to="/sign-up" className="text-white font-semibold hover:text-purple-300 transition">SignUp</Link>
                     <Link to="/about" className="text-white font-semibold hover:text-purple-300 transition">About</Link>
                     <Link to="/contact" className="text-white font-semibold hover:text-purple-300 transition">Contact</Link>
                 </nav>
