@@ -86,14 +86,14 @@ export default function Home() {
           </div>
 
           {/* Right content for layout symmetry */}
-          <div className="hidden md:flex flex-col justify-center text-white space-y-6 bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-lg">
-            <h2 className="text-3xl font-bold text-yellow-100">Plan Your Perfect Getaway</h2>
-            <p className="text-lg text-white">
+          <div className="hidden md:flex flex-col justify-center text-black space-y-6 bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-lg">
+            <h2 className="text-3xl font-bold text-black-100">Plan Your Perfect Getaway</h2>
+            <p className="text-lg text-black">
               Discover destinations around the world with our expert travel planners.
               Whether you're looking for a luxury escape, adventure tour, or cultural experience,
               TravelEase crafts personalized itineraries just for you.
             </p>
-            <ul className="list-disc list-inside space-y-1 text-white/90">
+            <ul className="list-disc list-inside space-y-1 text-grey/90">
               <li>Custom Itineraries</li>
               <li>24/7 Travel Assistance</li>
               <li>Handpicked Hotels</li>
