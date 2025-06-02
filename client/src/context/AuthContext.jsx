@@ -1,71 +1,99 @@
-// import { createContext } from 'react';
-// import { useState } from 'react';
-// import Swal from 'sweetalert2';
-// import userService from '../service/UserService';
-// import { useNavigate } from 'react-router';
+import React, { createContext, useState, useContext, useRef } from "react";
+import Swal from "sweetalert2";
 
-// const AuthContext = createContext();
-// function AuthProvider({ children }) {
-// 	const [userEmail, setUserEmail] = useState(null);
-// 	const [isAuth, setIsAuth] = useState(false);
-// 	const navigate = useNavigate();
+const AuthContext = createContext();
 
-// 	function login(email, password) {
-// 		try {
-// 			userService.authenticate(email, password);
-// 			setIsAuth(true);
-// 			setUserEmail(email);
-// 			// Add login action to history
-// 			// import('../service/historyService').then(({ default: historyService }) => {
-// 			// 	historyService.addHistory(email, 'login');
-// 			// });
-// 			navigate('/dashboard/intro');
-// 			Swal.fire({
-// 				title: 'Success',
-// 				text: 'Login is successful',
-// 				icon: 'success',
-// 			});
-// 		} catch (error) {
-// 			Swal.fire({
-// 				title: 'Invalid',
-// 				text: error.message,
-// 				icon: 'error',
-// 			});
-// 		}
-// 	}
-// 	function logout() {
-// 		setIsAuth(false);
-// 		setUserEmail(null);
-// 		Swal.fire({
-// 			title: 'Success',
-// 			text: 'Logout successful',
-// 			icon: 'success',
-// 		});
-// 	}
-// 	function register(email, password) {
-// 		try {
-// 			userService.addUser(email, password);
-// 			setIsAuth(true);
-// 			navigate('/dashboard/intro');
-// 			Swal.fire({
-// 				title: 'Success',
-// 				text: 'Registration is successful',
-// 				icon: 'success',
-// 			});
-// 		} catch (error) {
-// 			Swal.fire({
-// 				title: 'Invalid',
-// 				text: error.message,
-// 				icon: 'error',
-// 			});
-// 		}
-// 	}
-// 	return (
-// 		<AuthContext.Provider value={{ login, logout, register, isAuth, userEmail }}>
-// 			{children}
-// 		</AuthContext.Provider>
-// 	);
-// }
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
 
-// export { AuthProvider };
-// export default AuthContext;
+  // Use a ref to hold registeredUsers to avoid stale closures
+  const registeredUsersRef = useRef([
+    { email: "admin@gmail.com", password: "admin123", name: "Admin User", username: "admin" },
+  ]);
+
+  // We still keep a state just to trigger re-render if needed
+  const [registeredUsersState, setRegisteredUsersState] = useState(registeredUsersRef.current);
+
+  // login checks the ref, which always has latest users
+  const login = (email, password) => {
+    return new Promise((resolve, reject) => {
+      const foundUser = registeredUsersRef.current.find(
+        (u) => u.email === email && u.password === password
+      );
+
+      if (foundUser) {
+        setUser(foundUser);
+        Swal.fire({
+          title: "Login Successful!",
+          text: `Welcome back, ${foundUser.name}!`,
+          icon: "success",
+          timer: 2000,
+          showConfirmButton: false,
+        });
+        resolve(foundUser);
+      } else {
+        Swal.fire({
+          title: "Login Failed",
+          text: "Invalid email or password",
+          icon: "error",
+          showConfirmButton: true,
+        });
+        reject(new Error("Invalid email or password"));
+      }
+    });
+  };
+
+  const logout = () => {
+    setUser(null);
+    Swal.fire({
+      title: "Logged Out",
+      icon: "info",
+      timer: 1500,
+      showConfirmButton: false,
+    });
+  };
+
+  // signup adds new user to the ref and updates state to re-render
+  const signUp = (newUser) => {
+    return new Promise((resolve) => {
+      const usernameExists = registeredUsersRef.current.some(u => u.username === newUser.username);
+      const emailExists = registeredUsersRef.current.some(u => u.email === newUser.email);
+
+      if (usernameExists) {
+        Swal.fire("Oops!", "Username already taken", "error");
+        resolve({ success: false, message: "Username already taken" });
+        return;
+      }
+
+      if (emailExists) {
+        Swal.fire("Oops!", "Email already registered", "error");
+        resolve({ success: false, message: "Email already registered" });
+        return;
+      }
+
+      // Add new user to ref array
+      registeredUsersRef.current = [...registeredUsersRef.current, newUser];
+      // Update state to trigger re-render
+      setRegisteredUsersState(registeredUsersRef.current);
+
+      setUser(newUser);
+      Swal.fire({
+        title: "Account Created!",
+        text: `Welcome aboard, ${newUser.name}!`,
+        icon: "success",
+        timer: 2000,
+        showConfirmButton: false,
+      });
+      resolve({ success: true });
+    });
+  };
+
+  return (
+    <AuthContext.Provider value={{ user, login, logout, signUp }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export default AuthContext;
+export const useAuth = () => useContext(AuthContext);

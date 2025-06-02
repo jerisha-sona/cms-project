@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
           "url('https://images.pexels.com/photos/5707566/pexels-photo-5707566.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
       }}
     >
-      {/* Header (same as Contact page) */}
+      {/* Header */}
       <header className="absolute top-0 left-0 w-full flex justify-between items-center px-10 py-5 z-20">
         <div className="flex items-center space-x-3">
           <svg
@@ -29,11 +30,11 @@ export default function Home() {
           <span className="text-2xl font-bold text-white">TravelEase</span>
         </div>
         <nav className="flex space-x-6">
-          <a href="/home" className="text-white font-semibold hover:text-[#f9b576] transition">Home</a>
-          <a href="/login" className="text-white font-semibold hover:text-[#f9b576] transition">Login</a>
-          <a href="/sign-up" className="text-white font-semibold hover:text-[#f9b576] transition">Sign Up</a>
-          <a href="/about" className="text-white font-semibold hover:text-[#f9b576] transition">About</a>          
-          <a href="/contact" className="text-white font-semibold hover:text-[#f9b576] transition">Contact</a>
+          <Link to="/home" className="text-white font-semibold hover:text-[#f9b576] transition">Home</Link>
+          <Link to="/login" className="text-white font-semibold hover:text-[#f9b576] transition">Login</Link>
+          <Link to="/sign-up" className="text-white font-semibold hover:text-[#f9b576] transition">Sign Up</Link>
+          <Link to="/about" className="text-white font-semibold hover:text-[#f9b576] transition">About</Link>
+          <Link to="/contact" className="text-white font-semibold hover:text-[#f9b576] transition">Contact</Link>
         </nav>
       </header>
 
@@ -85,10 +86,10 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right content for layout symmetry */}
-          <div className="hidden md:flex flex-col justify-center text-black space-y-6 bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-lg">
-            <h2 className="text-3xl font-bold text-black-100">Plan Your Perfect Getaway</h2>
-            <p className="text-lg text-black">
+          {/* Right Section */}
+          <div className="hidden md:flex flex-col justify-center text-white space-y-6 bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-lg">
+            <h2 className="text-3xl font-bold text-yellow-100">Plan Your Perfect Getaway</h2>
+            <p className="text-lg text-white">
               Discover destinations around the world with our expert travel planners.
               Whether you're looking for a luxury escape, adventure tour, or cultural experience,
               TravelEase crafts personalized itineraries just for you.

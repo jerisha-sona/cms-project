@@ -4,19 +4,19 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 
 const Payment = () => {
-    const [form, setForm] = useState({
-        name: "",
-        email: "",
-        tour: "",
-        amount: "",
-        cardNumber: "",
-        expiry: "",
-        cvc: "",
-    });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    tour: "",
+    amount: "",
+    cardNumber: "",
+    expiry: "",
+    cvc: "",
+  });
 
-    const handleChange = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
-    };
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -84,3 +84,4 @@ const Payment = () => {
 };
 
 export default Payment;
+

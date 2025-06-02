@@ -80,7 +80,7 @@ export default function Portfolio() {
     >
       {/* Sidebar */}
       <aside
-        className={`bg-blue-700 bg-opacity-90 text-white w-64 space-y-6 py-7 px-4 absolute inset-y-0 left-0 transform ${
+        className={`bg-opacity-90 text-white w-64 space-y-6 py-7 px-4 absolute inset-y-0 left-0 transform bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-lg${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         } md:relative md:translate-x-0 transition duration-200 ease-in-out z-50`}
       >
@@ -101,20 +101,22 @@ export default function Portfolio() {
         </nav>
       </aside>
 
-      {/* Main Content */}
-      <div className="flex-1 p-6 md:ml-64 bg-white bg-opacity-80 backdrop-blur rounded-l-xl max-w-4xl mx-auto my-12">
-        <h2 className="text-3xl font-bold text-blue-900 mb-6 text-center">
-          {place.title}
-        </h2>
-        <img
-          src={place.img}
-          alt={place.title}
-          className="rounded-lg shadow-lg mb-6 mx-auto max-h-96 object-cover"
-        />
-        <p className="text-lg text-gray-700 mb-4">{place.info}</p>
-        <p className="italic text-blue-800 font-semibold">
-          Fun fact: {place.funFact}
-        </p>
+      {/* Centered Main Content */}
+      <div className="flex flex-1 items-center justify-center p-6">
+        <div className="bg-white bg-opacity-80 backdrop-blur rounded-xl shadow-xl max-w-4xl w-full p-6">
+          <h2 className="text-3xl font-bold text-blue-900 mb-6 text-center">
+            {place.title}
+          </h2>
+          <img
+            src={place.img}
+            alt={place.title}
+            className="rounded-lg shadow-lg mb-6 mx-auto max-h-96 object-cover"
+          />
+          <p className="text-lg text-gray-700 mb-4 text-center">{place.info}</p>
+          <p className="italic text-blue-800 font-semibold text-center">
+            Fun fact: {place.funFact}
+          </p>
+        </div>
       </div>
     </div>
   );
