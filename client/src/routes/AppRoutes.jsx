@@ -12,7 +12,8 @@ import DashboardLayouts from "../layouts/DashboardLayouts";
 import Intro from "../pages/dashboard/Intro";
 import Portfolio from "../pages/dashboard/Portfolio";
 import Travelform from "../pages/dashboard/Travelform";
-// import PrivateRoute from './PrivateRoute';
+import Payment from '../pages/dashboard/Payment';
+import Profile from '../pages/dashboard/Profile';// import PrivateRoute from './PrivateRoute';
 
 // import NotFound from '../pages/NotFound';
 
@@ -31,6 +32,8 @@ export default function AppRoutes() {
         <Route path="intro" element={<Intro />} />
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="travelform" element={<Travelform />} />
+        <Route path="payment" element={<Payment />} />
+        <Route path="profile" element={<Profile />} />
       </Route>
     </Routes>
   );
